@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spar Trolley System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/spar-logo.png" alt="Spar Logo">
+    </header>
+    <main>
+        <div class="content-area">
+            <div class="content">
+                <h1>Welcome to Spar</h1>
+            </div>
+            <div class="form-area">
+                <h2>Login</h2>
+                <form id="loginForm" action="#">
+                    <label for="email">Enter your email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="emailError">Please enter a valid email address.</span>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div class="content-area">
+                <div class="content">
+                    <h2>Track Your Trolleys, Earn Rewards</h2>
+                    <p>Use this portal to register your trolley, manage your profile, and access exclusive promotions and rewards.</p>
+                    <h3>How It Works</h3>
+                    <p>1. Log in with your email.</p>
+                    <p>2. Register your trolley and gain access to your personal dashboard.</p>
+                    <p>3. Scan your trolley's QR code to track its usage and receive personalized offers.</p>
+                    <h3>Sustainability & Savings</h3>
+                    <p>Help reduce lost trolleys and contribute to a greener future while saving money.</p>
+                    <h3>Customer Service</h3>
+                    <p>If you need assistance, our customer service team is here to help with any questions or issues regarding trolley management.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Handle login form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const email = document.getElementById('email').value;
+
+                    // Add login validation or authentication logic here
+                    if (email.includes('@')) {
+                        // Redirect to the registration page after successful login
+                        window.location.href = "Registration.html";
+                    } else {
+                        document.getElementById('emailError').style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/spar-logo.png" alt="Spar Logo">
+    </header>
+    <div class="content-area">
+        <div class="form-area">
+            <h2>Registration</h2>
+            <form id="registrationForm" action="/Portl.html" method="POST">
+                <label for="first-Name">first-Name</label>
+                <input type="text" id="first-Name" name="first-Name" required>
+                
+                <label for="surname">surname</label>
+                <input type="text" id="surname" name="surname" required>
+                
+                <label for="id-number"> ID number</label>
+                <input type="text" id="id-Number" name="id-Number" required>
+                
+                <label for="mobile-number">mobile Number</label>
+                <input type="text" id="mobile-Number" name="mobile-Number" required>
+                
+                <label for="password">password</label>
+                <input type="password" id="password" name="password" required minlength="8">
+                
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        <div class="right-content">
+            <h3>Welcome to Spar</h3>
+            <p>Join our community to enjoy exclusive offers, stay updated with the latest products, and manage your trolley information seamlessly.</p>
+        
+            <h4>Why Register?</h4>
+            <ul>
+                <li>Track your shopping trolley usage</li>
+                <li>Access to special offers and promotions</li>
+                <li>Personalized shopping experience</li>
+                <li>Exclusive discounts and rewards</li>
+            </ul>
+        
+            <h4>Need Help?</h4>
+            <p>If you encounter any issues during registration, please <a href="contact.html">contact our support team</a>. We're here to assist you 24/7.</p>
+        
+            <h4>Your Information is Safe with Us</h4>
+            <p>We value your privacy. All your details are securely stored and will never be shared with third parties without your consent.</p>
+        
+            <h4>Exclusive Promotion</h4>
+            <p>Register today and receive a 10% discount on your next purchase. Limited time offer!</p>
+        
+            <h4>Don't Miss Out!</h4>
+            <p>Complete your registration now to unlock all the benefits Spar has to offer. It's quick, easy, and free!</p>
+        </div>
+        <div>
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+    const registrationForm = document.getElementById('registrationForm');
+    if (registrationForm) {
+        registrationForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const firstName = document.getElementById('first-Name').value;
+            const surname = document.getElementById('surname').value;
+            const idNumber = document.getElementById('id-Number').value;
+            const mobileNumber = document.getElementById('mobile-Number').value;
+            const password = document.getElementById('password').value;
+
+            // Store user data in localStorage
+            const userData = {
+                firstName: firstName,
+                surname: surname,
+                idNumber: idNumber,
+                mobileNumber: mobileNumber
+            };
+            localStorage.setItem('user', JSON.stringify(userData));
+
+            // Redirect to the portal page after successful registration
+            window.location.href = "Portal.html";
+        });
+    }
+});
+
+            </script>
+        </div>
+    </div>
+</body>
+</html>

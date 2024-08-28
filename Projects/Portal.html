@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/spar-logo.png" alt="Spar Logo" class="logo">
+        <h1>Welcome, <span id="first-name">[first name]</span></h1>
+    </header>
+    <header>
+        <div class="header-buttons">
+            <a href="/browse-products" class="header-button">Browse Product</a>
+            <a href="/rewards-savings" class="header-button">Rewards Savings</a>
+            <a href="/all-specials" class="header-button">All Specials</a>
+        </div>
+    </header>
+    
+    <div class="hero">
+        <h2>Congratulations on Completing Your Registration!</h2>
+        <p>We’re excited to have you with us. Here’s your profile information.</p>
+    </div>
+    <div style="display: block; overflow: visible; height: auto; opacity: 1; margin-left: auto;" class="carousel__component--carousel carousel__component--masthead js-ajax-owl-masthead js-owl-carousel js-owl-masthead owl-carousel owl-theme is-loaded" id="Masthead Carousel Home Page" data-component-id="custom_masthead_carousel" data-base-url="/view/CustomMastheadCarouselComponentController/ajax/fillComponent" data-total-items="5" data-auto-scroll="true" data-scroll-delay="5">
+    
+        <div class="owl-wrapper-outer">
+            <div class="owl-wrapper" style="width: 3150px; left: 0px; display: flex; transition: 800ms; transform: translate3d(0px, 0px, 0px);">
+                
+                <!-- Carousel Item 1 -->
+                <div class="owl-item" style="width: 315px;">
+                    <div class="carousel__item">
+                        <div class="yCmsComponent article promotion-listening-click" data-promotion-ga="{'id': 'custom_item_1', 'name': 'Promo 1', 'creative': '', 'pos': '1', 'destinationUrl': '/promo1'}" data-is-promotion="false">
+                            <div class="banner__component simple-banner full-mobile-image aspect-ratio-box" style="padding-top:20.833334%">
+                                <a href="/promo1">
+                                    <img title="Promo 1" alt="Promo 1" class="lazyloaded" data-original-src="path_to_your_image_1.webp" src="path_to_your_image_1.webp">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Item 2 -->
+                <div class="owl-item" style="width: 315px;">
+                    <div class="carousel__item">
+                        <div class="yCmsComponent article promotion-listening-click" data-promotion-ga="{'id': 'custom_item_2', 'name': 'Promo 2', 'creative': '', 'pos': '2', 'destinationUrl': '/promo2'}" data-is-promotion="false">
+                            <div class="banner__component simple-banner full-mobile-image aspect-ratio-box" style="padding-top:20.833334%">
+                                <a href="/promo2">
+                                    <img title="Promo 2" alt="Promo 2" class="lazyloaded" data-original-src="path_to_your_image_2.webp" src="path_to_your_image_2.webp">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Additional Carousel Items Here -->
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-area">
+        <div class="profile">
+            <h2>Your Profile</h2>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="id-Number">id-Number:</label>
+                    <input type="text" id="id-Number" name="id-Number" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="trolley">Trolley Number:</label>
+                    <input type="text" id="trolley" name="trolley" readonly>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const user = JSON.parse(localStorage.getItem('user'));
+    
+        if (user) {
+            // Display the user's first name in the header
+            document.getElementById('first-name').textContent = user.firstName;
+    
+            // Display other user details in the profile form
+            document.getElementById('name').value = `${user.firstName} ${user.surname}`;
+            document.getElementById('id-Number').value = user.idNumber; // Assuming this is an email field; adjust accordingly
+            document.getElementById('phone').value = user.mobileNumber;
+            document.getElementById('trolley').value = "Trolley.Number"; // Replace with actual trolley number if available
+        } else {
+            alert("User data not found. Please register first.");
+            window.location.href = "registration.html"; // Redirect to registration if no data is found
+        }
+
+    // Simulate storing data (in a real application, you'd save this to a database)
+    const trolleyNumber = Math.floor(Math.random() * 1000) + 1; // Example trolley number
+
+    });
+    </script>
+</body>
+
+</html>
+
